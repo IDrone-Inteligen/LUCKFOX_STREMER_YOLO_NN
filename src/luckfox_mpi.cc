@@ -1,6 +1,8 @@
 #include "luckfox_mpi.h"
 
-RK_U64 TEST_COMM_GetNowUs() {
+
+RK_U64 TEST_COMM_GetNowUs() 
+{
 	struct timespec time = {0, 0};
 	clock_gettime(CLOCK_MONOTONIC, &time);
 	return (RK_U64)time.tv_sec * 1000000 + (RK_U64)time.tv_nsec / 1000; /* microseconds */
